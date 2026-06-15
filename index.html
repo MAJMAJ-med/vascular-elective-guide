@@ -201,9 +201,10 @@ td:has(>input.ck:checked){color:var(--muted)}
  table.stack,table.stack tbody,table.stack tr,table.stack td{display:block;width:100%}
  table.stack tr{border-bottom:1px solid var(--rule);padding:7px 0}
  table.stack tbody tr:last-child{border-bottom:0}
- table.stack td{border:0;padding:3px 2px;display:flex;gap:8px}
- table.stack td::before{content:attr(data-label);flex:0 0 40%;font-weight:700;color:var(--ink2);font-size:12px}
- .table-wrap:has(table.stack){overflow:visible}
+ table.stack td{border:0;padding:3px 2px;display:flex;gap:8px;min-width:0;overflow-wrap:anywhere}
+ table.stack td::before{content:attr(data-label);flex:0 0 40%;min-width:0;font-weight:700;color:var(--ink2);font-size:12px;overflow-wrap:anywhere}
+ table.stack td>*{min-width:0}
+ .table-wrap:has(table.stack){overflow-x:clip}
  body.quiz table.stack td.ans{display:flex}
 }
 @media print{
@@ -1280,11 +1281,37 @@ td:has(>input.ck:checked){color:var(--muted)}
   </g>
 </svg></div><figcaption><b>Lower-extremity venous anatomy. </b>The great saphenous vein (GSV) runs anterior to the medial malleolus and up the medial leg to the saphenofemoral junction, where it joins the common femoral vein; it is the #1 bypass conduit. The small saphenous vein runs behind the lateral malleolus to the popliteal vein. Deep veins parallel the named arteries and are the DVT source, and the so-called 'superficial femoral vein' is a deep vein. May-Thurner: the left common iliac vein is compressed by the right common iliac artery.</figcaption><button aria-haspopup="dialog" class="plate-btn" data-plate="le_venous" type="button"><span class="plate-btn-lab">View Netter plate (Plate 492)</span><span aria-hidden="true" class="plate-btn-ico">⤢</span></button></figure><hr/></section></div></details>
 <details class="part part-3" id="part-iii-tier-2-reference-the-10-cases-the-wards" data-defaultopen="0" data-spy><summary><span class="pl">Part</span><h1>PART III, TIER 2 REFERENCE: THE 10 CASES & THE WARDS</h1><span class="chev">▸</span></summary><div class="part-body"><section class="subsec" id="a-the-10-cases-indication-anatomy-operation-one-trial" data-spy><h2 id="a-the-10-cases-indication--anatomy--operation--one-trial">A. The 10 cases (indication → anatomy → operation → one trial)</h2><p><strong>Tier-1 five (you WILL see and be pimped on):</strong></p><ol type="1">
-<li><strong>AAA, open vs EVAR.</strong> <em>Indication:</em> see card. <em>Anatomy:</em> ~95% infrarenal; the <strong>neck</strong> (normal aorta between lowest renal and aneurysm) must seat an EVAR graft; left renal vein crosses anterior to the aorta (retroaortic ~2–3% = bleeding trap); IMA sacrifice risks sigmoid ischemia. <em>Operation:</em> open = clamp + sew graft (transperitoneal vs retroperitoneal); EVAR = femoral stent-graft. <em>Trial:</em> <strong>EVAR-1/DREAM</strong>, EVAR lower early mortality, curves converge ~2–3 yr, late sac-rupture risk → <strong>lifelong surveillance.</strong> Most early death after repair = <strong>cardiac (MI)</strong>; feared bowel complication = <strong>ischemic colitis</strong> (sigmoid).</li>
-<li><strong>Carotid stenosis, CEA vs <abbr class="gl" tabindex="0" title="carotid artery stenting">CAS</abbr>.</strong> <em>Indication/timing/trials:</em> see card + CREST-2. <em>Operation:</em> CEA = arteriotomy, remove plaque + diseased intima, <strong><abbr class="gl" tabindex="0" title="closing an arteriotomy with a patch to widen it and reduce restenosis">patch closure</abbr></strong> (reduces restenosis/stroke) or <abbr class="gl" tabindex="0" title="endarterectomy by transecting the artery and turning it inside-out to remove plaque">eversion</abbr>; <strong>selective shunt</strong> if back/stump pressure &lt; 40–50 mmHg, EEG/SSEP change, or awake-patient deficit. <strong>Release ECA/CCA first, ICA last</strong> (flush debris away from the brain). <em>CAS/<abbr class="gl" tabindex="0" title="transcarotid artery revascularization">TCAR</abbr></em> favored for hostile/irradiated neck (<strong>[ENT]</strong> field logic), high lesion, younger patient.</li>
-<li><strong>PAD, claudication vs CLTI.</strong> <em>Claudication:</em> medical + supervised exercise FIRST (cilostazol, statin, antiplatelet, smoking cessation; <strong>CLEVER</strong>, exercise matched stenting for walking). <em>CLTI</em> (Rutherford 4–6): revascularize. <em>Trials:</em> <strong>BEST-CLI / BASIL-2</strong> (Table E). <em>Conduit:</em> single-segment ipsilateral GSV is gold; prosthetic does poorly below the knee.</li>
-<li><strong>Acute limb ischemia.</strong> 6 Ps, Rutherford, embolic vs thrombotic, heparin first → see Table C. Watch <abbr class="gl" tabindex="0" title="restoring blood flow to ischemic tissue; can itself cause reperfusion injury (edema, oxidative and metabolic damage)">reperfusion</abbr>/<abbr class="gl" tabindex="0" title="rising pressure in a muscle compartment that chokes off its own perfusion">compartment syndrome</abbr> (pain on passive stretch early, pulselessness late) → <abbr class="gl" tabindex="0" title="incising muscle compartments to relieve compartment-syndrome pressure">fasciotomy</abbr>; monitor CK/K⁺/myoglobin.</li>
-<li><strong>Hemodialysis access.</strong> Fistula-first, Rule of 6s → see card. Complications: <strong><abbr class="gl" tabindex="0" title="hand ischemia from blood diverted through a dialysis access">steal syndrome</abbr></strong> (<abbr class="gl" tabindex="0" title="distal revascularization–interval ligation">DRIL</abbr>/<abbr class="gl" tabindex="0" title="narrowing a dialysis access to cut its flow (treats steal or high-output failure)">banding</abbr>), thrombosis/stenosis, aneurysm, high-output failure. Allen test first; avoid subclavian lines (central stenosis ruins future access).</li>
+<li><strong>AAA, open vs EVAR.</strong>
+<ul>
+<li><em>Indication:</em> see card.</li>
+<li><em>Anatomy:</em> ~95% infrarenal; the <strong>neck</strong> (normal aorta between lowest renal and aneurysm) must seat an EVAR graft; left renal vein crosses anterior to the aorta (retroaortic ~2–3% = bleeding trap); IMA sacrifice risks sigmoid ischemia.</li>
+<li><em>Operation:</em> open = clamp + sew graft (transperitoneal vs retroperitoneal); EVAR = femoral stent-graft.</li>
+<li><em>Trial:</em> <strong>EVAR-1/DREAM</strong>, EVAR lower early mortality, curves converge ~2–3 yr, late sac-rupture risk → <strong>lifelong surveillance.</strong></li>
+<li><em>Pearls:</em> most early death after repair = <strong>cardiac (MI)</strong>; feared bowel complication = <strong>ischemic colitis</strong> (sigmoid).</li>
+</ul></li>
+<li><strong>Carotid stenosis, CEA vs <abbr class="gl" tabindex="0" title="carotid artery stenting">CAS</abbr>.</strong>
+<ul>
+<li><em>Indication / timing / trials:</em> see card + CREST-2.</li>
+<li><em>Operation:</em> CEA = arteriotomy, remove plaque + diseased intima, <strong><abbr class="gl" tabindex="0" title="closing an arteriotomy with a patch to widen it and reduce restenosis">patch closure</abbr></strong> (reduces restenosis/stroke) or <abbr class="gl" tabindex="0" title="endarterectomy by transecting the artery and turning it inside-out to remove plaque">eversion</abbr>; <strong>selective shunt</strong> if back/stump pressure &lt; 40–50 mmHg, EEG/SSEP change, or awake-patient deficit. <strong>Release ECA/CCA first, ICA last</strong> (flush debris away from the brain).</li>
+<li><em>CAS / <abbr class="gl" tabindex="0" title="transcarotid artery revascularization">TCAR</abbr>:</em> favored for hostile/irradiated neck (<strong>[ENT]</strong> field logic), high lesion, younger patient.</li>
+</ul></li>
+<li><strong>PAD, claudication vs CLTI.</strong>
+<ul>
+<li><em>Claudication:</em> medical + supervised exercise FIRST (cilostazol, statin, antiplatelet, smoking cessation; <strong>CLEVER</strong>, exercise matched stenting for walking).</li>
+<li><em>CLTI</em> (Rutherford 4–6): revascularize.</li>
+<li><em>Trials:</em> <strong>BEST-CLI / BASIL-2</strong> (Table E).</li>
+<li><em>Conduit:</em> single-segment ipsilateral GSV is gold; prosthetic does poorly below the knee.</li>
+</ul></li>
+<li><strong>Acute limb ischemia.</strong>
+<ul>
+<li><em>Workup:</em> 6 Ps, Rutherford, embolic vs thrombotic, heparin first → see Table C.</li>
+<li><em>Watch:</em> <abbr class="gl" tabindex="0" title="restoring blood flow to ischemic tissue; can itself cause reperfusion injury (edema, oxidative and metabolic damage)">reperfusion</abbr>/<abbr class="gl" tabindex="0" title="rising pressure in a muscle compartment that chokes off its own perfusion">compartment syndrome</abbr> (pain on passive stretch early, pulselessness late) → <abbr class="gl" tabindex="0" title="incising muscle compartments to relieve compartment-syndrome pressure">fasciotomy</abbr>; monitor CK/K⁺/myoglobin.</li>
+</ul></li>
+<li><strong>Hemodialysis access.</strong>
+<ul>
+<li><em>Principles:</em> fistula-first, Rule of 6s → see card; Allen test first; avoid subclavian lines (central stenosis ruins future access).</li>
+<li><em>Complications:</em> <strong><abbr class="gl" tabindex="0" title="hand ischemia from blood diverted through a dialysis access">steal syndrome</abbr></strong> (<abbr class="gl" tabindex="0" title="distal revascularization–interval ligation">DRIL</abbr>/<abbr class="gl" tabindex="0" title="narrowing a dialysis access to cut its flow (treats steal or high-output failure)">banding</abbr>), thrombosis/stenosis, aneurysm, high-output failure.</li>
+</ul></li>
 </ol><p><strong>Tier-2/3 (common and pimpable):</strong></p><ol start="6" type="1">
 <li><strong>Lower-extremity bypass</strong>, name it by endpoints (fem-pop, fem-distal, fem-fem, ax-fem). Above-knee popliteal tolerates prosthetic; below-knee demands <strong>vein</strong> (reversed or in-situ). Fix inflow before any distal bypass.</li>
 <li><strong>Aortoiliac occlusive disease (<abbr class="gl" tabindex="0" title="aortoiliac occlusion: buttock claudication + impotence + absent femoral pulses">Leriche</abbr>).</strong> Triad: <strong>buttock claudication + erectile dysfunction + absent femoral pulses.</strong> Endo-first (<strong><abbr class="gl" tabindex="0" title="two stents placed side-by-side across the aortic bifurcation">kissing iliac stents</abbr></strong>); open gold standard = <strong><abbr class="gl" tabindex="0" title="a graft from the aorta to both femoral arteries for aortoiliac disease">aortobifemoral bypass</abbr></strong> (~80–90% 5-yr patency); <abbr class="gl" tabindex="0" title="a bypass routed outside the normal anatomic path (e.g., axillo-femoral, fem-fem)">extra-anatomic</abbr> (ax-fem, fem-fem) for high-risk/hostile abdomen.</li>
@@ -1297,14 +1324,57 @@ td:has(>input.ck:checked){color:var(--muted)}
 <li><strong>Bruit</strong> = turbulence ≈ stenosis (carotid bruit correlates poorly with severity; a near-occlusion can be silent). <strong>A thrill/bruit over a dialysis access is normal, loss of thrill = it clotted.</strong></li>
 <li><strong>Acute limb sensorimotor exam</strong> stages ALI (light touch between toes goes first; then motor) → Table C.</li>
 <li><strong>Diabetic foot:</strong> neuropathy (<strong>10-g monofilament</strong>), ischemia (medial calcinosis → non-compressible vessels), infection (<strong>probe-to-bone +</strong> → osteomyelitis). Shoes AND socks off, look between every toe. <strong><abbr class="gl" tabindex="0" title="Wound, Ischemia, foot Infection (SVS limb-threat classification)">WIfI</abbr></strong> (Wound, Ischemia, foot Infection) stratifies amputation risk.</li>
-</ul></section><section class="subsec" id="c-imaging-roles" data-spy><h2 id="c-imaging-roles">C. Imaging roles</h2><p><strong>Duplex</strong> (first-line, bedside, no contrast, carotid, AAA, graft/access surveillance, DVT) → <strong>CTA</strong> (the endovascular workhorse, AAA sizing, dissection, runoff; iodinated contrast) → <strong>catheter angiography/<abbr class="gl" tabindex="0" title="digital subtraction angiography">DSA</abbr></strong> (gold standard + therapeutic). <abbr class="gl" tabindex="0" title="MR angiography">MRA</abbr> when contrast/renal is a concern (tends to overestimate stenosis). Rough flow: <strong>duplex to screen → CTA to plan → angiography to fix.</strong></p></section><section class="subsec" id="d-taking-a-vascular-consult-page-to-plan" data-spy><h2 id="d-taking-a-vascular-consult-page-to-plan">D. Taking a vascular consult (page-to-plan)</h2><p>Get <strong>onset/laterality/pain, the exam (pulses + Doppler + sensorimotor), imaging, renal function/anticoagulation status, goals of care.</strong> Then triage by syndrome:</p><ul>
+</ul></section><section class="subsec" id="c-imaging-roles" data-spy><h2 id="c-imaging-roles">C. Imaging roles</h2><ul>
+<li><strong>Duplex</strong> (first-line): bedside, no contrast; carotid, AAA, graft/access surveillance, DVT.</li>
+<li><strong>CTA</strong> (the endovascular workhorse): AAA sizing, dissection, runoff; iodinated contrast.</li>
+<li><strong>Catheter angiography / <abbr class="gl" tabindex="0" title="digital subtraction angiography">DSA</abbr></strong>: gold standard, and therapeutic (treat in the same sitting).</li>
+<li><strong><abbr class="gl" tabindex="0" title="MR angiography">MRA</abbr></strong> when contrast/renal function is a concern (tends to overestimate stenosis).</li>
+</ul><p><strong>Rough flow: duplex to screen → CTA to plan → angiography to fix.</strong></p></section><section class="subsec" id="d-taking-a-vascular-consult-page-to-plan" data-spy><h2 id="d-taking-a-vascular-consult-page-to-plan">D. Taking a vascular consult (page-to-plan)</h2><p>Get <strong>onset/laterality/pain, the exam (pulses + Doppler + sensorimotor), imaging, renal function/anticoagulation status, goals of care.</strong> Then triage by syndrome:</p><ul>
 <li><strong>ALI</strong> (the can't-miss): viability → <strong>heparin bolus + drip now</strong>, <abbr class="gl" tabindex="0" title="nil per os (nothing by mouth)">NPO</abbr>, call the team, CTA if it won't delay the OR. → Table C.</li>
 <li><strong>AAA/rupture:</strong> thresholds + triad → card.</li>
 <li><strong>Access problems:</strong> thrombosed fistula (lost thrill), bleeding, steal, infection; <strong>post-cath groin:</strong> pseudoaneurysm (pulsatile mass + <strong>systolic bruit / to-and-fro Doppler</strong> → US-guided thrombin), retroperitoneal bleed (high stick → flank pain + falling Hgb), AV fistula.</li>
 <li><strong>Non-healing ulcer:</strong> characterize (Table D) + ABI/TBI; the question is <em>inflow enough to heal, or revascularize first?</em></li>
 <li><strong>Carotid TIA/stroke:</strong> amaurosis fugax / contralateral deficit / aphasia → duplex + CTA → card thresholds.</li>
 <li><strong>Mesenteric:</strong> acute "pain out of proportion"; chronic postprandial triad.</li>
-</ul></section><section class="subsec" id="e-post-op-checks-is-it-still-flowing" data-spy><h2 id="e-post-op-checks-is-it-still-flowing">E. Post-op checks: "Is it still flowing?"</h2><p class="hot">Check <strong>pulses/Doppler distal to any repair or access</strong>, compared to the documented baseline and the other side (a signal lost since PACU = emergency, page now). Inspect access/graft sites (hematoma, pulsatile mass, bleeding). Dialysis access: palpate <strong>thrill</strong>, auscultate <strong>bruit</strong>. <strong>After CEA:</strong> focused neuro + <strong>expanding neck hematoma (airway emergency, open at bedside; same logic as a post-thyroidectomy hematoma [ENT])</strong>, cranial-nerve checks (Table A), and <strong>labile BP</strong> → control to prevent <strong><abbr class="gl" tabindex="0" title="post-CEA headache, seizure, or hemorrhage from suddenly restored high flow">cerebral hyperperfusion</abbr></strong> (ipsilateral headache, seizure, hemorrhage).</p></section><section class="subsec" id="f-medical-management-the-vascular-bundle-pimped-constantly" data-spy><h2 id="f-medical-management-the-vascular-bundle-pimped-constantly">F. Medical management: the "vascular bundle" (pimped constantly)</h2><p>Every atherosclerosis patient: <strong>single antiplatelet + high-intensity statin + smoking cessation + BP &lt; 130/80 + glucose control</strong>; <strong>cilostazol</strong> for claudication (not in HF); <strong>supervised exercise</strong> first-line. <strong>Low-dose rivaroxaban 2.5 mg BID + ASA</strong> (COMPASS/VOYAGER-PAD) in select high-risk. <strong>Antiplatelet vs anticoagulation:</strong> arterial/atherosclerosis/stents/"white clot" → <strong>antiplatelet</strong>; cardioembolic (AFib)/<abbr class="gl" tabindex="0" title="venous thromboembolism">VTE</abbr>/"red clot" → <strong>anticoagulation</strong>; ALI → <strong>therapeutic heparin</strong> regardless.</p></section><section class="subsec" id="g-the-vascular-presentation-look-polished-3045-s" data-spy><h2 id="g-the-vascular-presentation-look-polished-3045-s">G. The vascular presentation (look polished, ~30–45 s)</h2><ol type="1">
+</ul></section><section class="subsec" id="e-post-op-checks-is-it-still-flowing" data-spy><h2 id="e-post-op-checks-is-it-still-flowing">E. Post-op checks: "Is it still flowing?"</h2><ul>
+<li><strong>Distal pulses/Doppler</strong> below any repair or access, vs the documented baseline and the other side (<strong>a signal lost since PACU = emergency, page now</strong>).</li>
+<li><strong>Inspect</strong> access/graft sites: hematoma, pulsatile mass, bleeding.</li>
+<li><strong>Dialysis access:</strong> palpate <strong>thrill</strong>, auscultate <strong>bruit</strong> (loss of thrill = it clotted).</li>
+<li class="hot"><strong>After CEA</strong>, specifically:
+<ul>
+<li>focused neuro exam</li>
+<li class="hot"><strong>expanding neck hematoma = airway emergency, open at bedside</strong> (same logic as a post-thyroidectomy hematoma <strong>[ENT]</strong>)</li>
+<li>cranial-nerve checks (Table A)</li>
+<li><strong>labile BP</strong> → control to prevent <strong><abbr class="gl" tabindex="0" title="post-CEA headache, seizure, or hemorrhage from suddenly restored high flow">cerebral hyperperfusion</abbr></strong> (ipsilateral headache, seizure, hemorrhage)</li>
+</ul></li>
+</ul></section><section class="subsec" id="f-medical-management-the-vascular-bundle-pimped-constantly" data-spy><h2 id="f-medical-management-the-vascular-bundle-pimped-constantly">F. Medical management: the "vascular bundle" (pimped constantly)</h2><p><strong>The bundle, every atherosclerosis patient gets all five:</strong></p><ul>
+<li><strong>single antiplatelet</strong> (aspirin, or clopidogrel)</li>
+<li><strong>high-intensity statin</strong> (LDL goal &lt; 70, often &lt; 55)</li>
+<li><strong>smoking cessation</strong> (the single highest-impact intervention)</li>
+<li><strong>BP &lt; 130/80</strong></li>
+<li><strong>glucose control</strong></li>
+</ul><p><strong>Claudication add-ons:</strong> <strong>supervised exercise</strong> (first-line) + <strong>cilostazol</strong> (not in HF). <strong>Select high-risk:</strong> <strong>low-dose rivaroxaban 2.5 mg BID + ASA</strong> (COMPASS/VOYAGER-PAD).</p><p><strong>Antiplatelet vs anticoagulation (know cold):</strong></p><div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Agent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Setting">Arterial / atherosclerosis / stents ("white clot")</td>
+<td data-label="Agent"><strong>antiplatelet</strong></td>
+</tr>
+<tr>
+<td data-label="Setting">Cardioembolic (AFib) / <abbr class="gl" tabindex="0" title="venous thromboembolism">VTE</abbr> ("red clot")</td>
+<td data-label="Agent"><strong>anticoagulation</strong></td>
+</tr>
+<tr>
+<td data-label="Setting">Acute limb ischemia (ALI)</td>
+<td data-label="Agent"><strong>therapeutic heparin</strong>, regardless</td>
+</tr>
+</tbody>
+</table></div></section><section class="subsec" id="g-the-vascular-presentation-look-polished-3045-s" data-spy><h2 id="g-the-vascular-presentation-look-polished-3045-s">G. The vascular presentation (look polished, ~30–45 s)</h2><ol type="1">
 <li><strong>One-liner:</strong> age/sex, key vascular history, procedure/<abbr class="gl" tabindex="0" title="postoperative day">POD</abbr>#, <em>"68M POD#2 from a right fem-pop bypass for CLTI with tissue loss."</em></li>
 <li>Overnight events; <strong>vitals (BP especially)</strong>, I/Os, lines/drains.</li>
 <li><strong>The vascular exam out loud, the money line:</strong> <em>"Right DP and PT 1+ by Doppler, monophasic; graft site clean/dry/intact; foot warm, sensation intact, wound granulating."</em></li>
@@ -1349,7 +1419,72 @@ td:has(>input.ck:checked){color:var(--muted)}
 <li><strong>Closed gloving</strong> is the default self-gloving method and the classic rusty-student tell, <strong>re-drill it; have the scrub tech check you on day 1.</strong></li>
 <li><strong>Hybrid/endo room:</strong> lead apron + dosimeter <strong>before</strong> you scrub (you can't get one after); step back during fluoro (dose falls with the square of distance).</li>
 <li><strong>Introduce yourself (8-sec script):</strong> <em>"Hi, I'm [Name], the student with the team, okay if I scrub in? Where would you like me?"</em> Learn the tech's and circulator's names. <strong>Never talk during the time-out.</strong></li>
-</ul></section><section class="subsec" id="4-instruments-suture-the-anastomosis" data-spy><h2 id="4-instruments-suture--the-anastomosis">4. Instruments, suture &amp; the anastomosis</h2><p><strong>Named instruments:</strong> <strong>DeBakey</strong> (atraumatic pickups, never grab vessel with toothed forceps), <strong>bulldog</strong> (soft branch occlusion), <strong>Satinsky</strong> (side-biting partial occlusion), <strong>aortic cross-clamp</strong> (the "clamp time" clock), <strong>Fogarty</strong> (balloon embolectomy, 2–3 Fr tibial, 3–4 Fr fem-pop, 4–6 Fr aortoiliac), <strong>Potts scissors</strong> (extend the arteriotomy), <strong>Castroviejo</strong> scissors/driver (micro, <em>you've seen these in ENT/micro labs</em> <strong>[ENT]</strong>), <strong>Pruitt-Inahara</strong> (two-balloon carotid shunt) / <strong>Javid</strong> (clamp-held shunt), <strong>tunneler</strong>, <strong>vessel loops</strong> (single = retract, double = occlude), <strong>Rummel tourniquet</strong>, self-retainers (<strong>Weitlaner/Gelpi/Bookwalter</strong>).</p><p><strong>Suture, direct ENT free-flap transfer [ENT]:</strong> <strong>Prolene = permanent monofilament, tapered CV needle</strong> (permanent because the anastomosis sees arterial pressure forever; monofilament = low drag/low infection). <strong>Sizes:</strong> 3-0/4-0 aorta, 5-0 femoral, 6-0 carotid, 7-0+ distal (8-0/9-0–10-0 free flap). <strong>Double-armed + <abbr class="gl" tabindex="0" title="sliding a graft down pre-placed sutures to sew a deep posterior anastomotic wall">parachute</abbr> the posterior wall</strong>; <strong>forehand one wall, backhand the other</strong>; lay throws flat, constant tension; a surgeon's throw helps slick monofilament hold.</p><p><strong>Anastomosis sequence to anticipate:</strong> heparinize → clamp → arteriotomy (#11) + extend (Potts) → (CEA: <abbr class="gl" tabindex="0" title="surgically peeling out atherosclerotic plaque with the diseased inner artery layer">endarterectomy</abbr> plane, tack distal intima, shunt if needed) → double-armed Prolene, parachute posterior wall, run each wall, <strong><abbr class="gl" tabindex="0" title="briefly releasing clamps to flush debris out before tying the final suture">back-bleed</abbr> before final tie</strong> → release clamps (CEA: ECA/CCA first, ICA last) → confirm flow (Doppler/<abbr class="gl" tabindex="0" title="imaging at the end of a case to confirm a technically good repair">completion angiogram</abbr>) → protamine → close.</p></section><section class="subsec" id="5-complications-by-case-the-pimp-money" data-spy><h2 id="5-complications-by-case-the-pimp-money">5. Complications by case (the pimp money)</h2><ul>
+</ul></section><section class="subsec" id="4-instruments-suture-the-anastomosis" data-spy><h2 id="4-instruments-suture--the-anastomosis">4. Instruments, suture &amp; the anastomosis</h2><h3 id="named-instruments">Named instruments</h3><div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Instrument</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Instrument"><strong>DeBakey</strong> forceps</td>
+<td data-label="Role">atraumatic pickups (never grab a vessel with toothed forceps)</td>
+</tr>
+<tr>
+<td data-label="Instrument"><strong>Bulldog</strong></td>
+<td data-label="Role">soft, atraumatic branch occlusion</td>
+</tr>
+<tr>
+<td data-label="Instrument"><strong>Satinsky</strong></td>
+<td data-label="Role">side-biting partial-occlusion clamp</td>
+</tr>
+<tr>
+<td data-label="Instrument"><strong>Aortic cross-clamp</strong></td>
+<td data-label="Role">full occlusion; starts the "clamp time" clock</td>
+</tr>
+<tr>
+<td data-label="Instrument"><strong>Fogarty</strong></td>
+<td data-label="Role">balloon embolectomy (2–3 Fr tibial, 3–4 Fr fem-pop, 4–6 Fr aortoiliac)</td>
+</tr>
+<tr>
+<td data-label="Instrument"><strong>Potts scissors</strong></td>
+<td data-label="Role">extend the arteriotomy</td>
+</tr>
+<tr>
+<td data-label="Instrument"><strong>Castroviejo</strong> scissors/driver</td>
+<td data-label="Role">micro instruments (you've seen these in ENT/micro labs) <strong>[ENT]</strong></td>
+</tr>
+<tr>
+<td data-label="Instrument"><strong>Pruitt-Inahara</strong>, <strong>Javid</strong></td>
+<td data-label="Role">carotid shunts (Pruitt = two-balloon; Javid = clamp-held)</td>
+</tr>
+<tr>
+<td data-label="Instrument"><strong>Vessel loops</strong></td>
+<td data-label="Role">single = retract, double = occlude</td>
+</tr>
+<tr>
+<td data-label="Instrument"><strong>Tunneler</strong>, <strong>Rummel tourniquet</strong></td>
+<td data-label="Role">pass a graft / cinch a vessel loop</td>
+</tr>
+<tr>
+<td data-label="Instrument"><strong>Weitlaner / Gelpi / Bookwalter</strong></td>
+<td data-label="Role">self-retaining retractors</td>
+</tr>
+</tbody>
+</table></div><h3 id="suture-the-direct-ent-free-flap-transfer-ent">Suture (the direct ENT free-flap transfer <strong>[ENT]</strong>)</h3><ul>
+<li><strong>Prolene = permanent monofilament on a tapered CV needle</strong> (permanent because the anastomosis sees arterial pressure forever; monofilament = low drag, low infection).</li>
+<li><strong>Sizes:</strong> 3-0/4-0 aorta, 5-0 femoral, 6-0 carotid, 7-0+ distal (8-0/9-0–10-0 free flap).</li>
+<li><strong>Technique:</strong> double-armed, <strong><abbr class="gl" tabindex="0" title="sliding a graft down pre-placed sutures to sew a deep posterior anastomotic wall">parachute</abbr> the posterior wall</strong>; <strong>forehand one wall, backhand the other</strong>; lay throws flat with constant tension; a surgeon's throw helps slick monofilament hold.</li>
+</ul><h3 id="anastomosis-sequence-to-anticipate">Anastomosis sequence to anticipate</h3><ol type="1">
+<li>heparinize → clamp</li>
+<li>arteriotomy (#11) + extend (Potts)</li>
+<li>CEA only: <abbr class="gl" tabindex="0" title="surgically peeling out atherosclerotic plaque with the diseased inner artery layer">endarterectomy</abbr> plane, tack distal intima, shunt if needed</li>
+<li>double-armed Prolene, parachute the posterior wall, run each wall</li>
+<li><strong><abbr class="gl" tabindex="0" title="briefly releasing clamps to flush debris out before tying the final suture">back-bleed</abbr> before the final tie</strong></li>
+<li>release clamps (CEA: ECA/CCA first, ICA last)</li>
+<li>confirm flow (Doppler / <abbr class="gl" tabindex="0" title="imaging at the end of a case to confirm a technically good repair">completion angiogram</abbr>) → protamine → close</li>
+</ol></section><section class="subsec" id="5-complications-by-case-the-pimp-money" data-spy><h2 id="5-complications-by-case-the-pimp-money">5. Complications by case (the pimp money)</h2><ul>
 <li class="hot"><strong>CEA:</strong> perioperative stroke; <strong>cranial-nerve injury</strong> (Table A); <strong>expanding neck hematoma → open at bedside (airway) [ENT]</strong>; cerebral hyperperfusion.</li>
 <li><strong>ALI/reperfusion:</strong> compartment syndrome (pain on passive stretch early, pulseless late), rhabdo/hyperK → fasciotomy.</li>
 <li><strong>Graft:</strong> early thrombosis = technical (kink/flap); late = <abbr class="gl" tabindex="0" title="scar-like inner-wall overgrowth causing late graft or stent narrowing">neointimal hyperplasia</abbr>/disease. Infection organisms: <strong>S. aureus</strong> early, <strong>S. epidermidis</strong> late.</li>
